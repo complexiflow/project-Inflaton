@@ -1,5 +1,5 @@
 
-inflaton development tree
+Inflaton development tree
 
 inflaton is a PoS-based cryptocurrency.
 
