@@ -60,7 +60,7 @@ public:
 		pchMessageStart[1] = 0xba;
 		pchMessageStart[2] = 0xfb;
 		pchMessageStart[3] = 0x63;
-		vAlertPubKey = ParseHex("04a966420eabbb8a7106385003fef77896538a382a0dcc389ff45f3c98751d9af423a066689757666259351198a8a2a628a1fd644c3232678c5845384c744ff8d7");
+		vAlertPubKey = ParseHex("04879777511a8cb00fc2321de4b636fe8202fda3d567a2428a1183fa79f4a43e7db09db98bd0b27ab86353829429b2fb1d35d964087c9fd986793eacf239dbc1b2");
 		nDefaultPort = 25824;
 		nRPCPort = 27621;
 		bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
@@ -102,8 +102,8 @@ public:
 		base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
 		vSeeds.push_back(CDNSSeedData("0", "185.92.222.85"));
-		// vSeeds.push_back(CDNSSeedData("1", "93.186.255.102"));
-		// vSeeds.push_back(CDNSSeedData("2", "212.237.7.224"));
+//		vSeeds.push_back(CDNSSeedData("1", "93.186.255.102"));
+//		vSeeds.push_back(CDNSSeedData("2", "212.237.7.224"));
 		convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
 
 		nPoolMaxTransactions = 3;
@@ -149,8 +149,18 @@ public:
 		strDataDir = "testnet";
 
 		// Modify the testnet genesis block so the timestamp is valid for a later start.
-		genesis.nBits = 520159231;
-		genesis.nNonce = 70685;
+		genesis.nBits = 1518295726;
+		genesis.nNonce = 0;
+
+	//	 while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
+            //    if (++genesis.nNonce==0) break;
+          //      hashGenesisBlock = genesis.GetHash();
+        //        }
+      //          printf("%s\n MAIN ", hashGenesisBlock.ToString().c_str());
+    //            printf("%s\n MAIN ", genesis.hashMerkleRoot.ToString().c_str());
+  //              printf("%x\n MAIN ", bnProofOfWorkLimit.GetCompact());
+//                printf("%d\n MAIN ", genesis.nNonce);
+
 
 		assert(hashGenesisBlock == uint256("0x00009cc9c6872d0970a2372fb9e78fd8332ee6d0811daed9b51ef3b7cde74f96"));
 
